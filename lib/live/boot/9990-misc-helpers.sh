@@ -4,14 +4,19 @@
 
 is_live_path()
 {
-	DIRECTORY="${1}/${LIVE_MEDIA_PATH}"
-	for FILESYSTEM in squashfs ext2 ext3 ext4 xfs dir jffs
-	do
-		if ls "${DIRECTORY}/"*.${FILESYSTEM} > /dev/null 2>&1
-		then
-			return 0
-		fi
-	done
+	DIRECTORY="${1}"
+
+	if [ -d "${DIRECTORY}"/"${LIVE_MEDIA_PATH}" ]
+	then
+		for FILESYSTEM in squashfs ext2 ext3 ext4 xfs dir jffs2 git
+		do
+			if [ "$(echo ${DIRECTORY}/${LIVE_MEDIA_PATH}/*.${FILESYSTEM})" != "${DIRECTORY}/${LIVE_MEDIA_PATH}/*.${FILESYSTEM}" ]
+			then
+				return 0
+			fi
+		done
+	fi
+
 	return 1
 }
 
@@ -63,7 +68,13 @@ mount_images_in_directory ()
 	rootmnt="${2}"
 	mac="${3}"
 
-	if is_live_path "${directory}"
+	if match_files_in_dir "${directory}/${LIVE_MEDIA_PATH}/*.squashfs" ||
+		match_files_in_dir "${directory}/${LIVE_MEDIA_PATH}/*.ext2" ||
+		match_files_in_dir "${directory}/${LIVE_MEDIA_PATH}/*.ext3" ||
+		match_files_in_dir "${directory}/${LIVE_MEDIA_PATH}/*.ext4" ||
+		match_files_in_dir "${directory}/${LIVE_MEDIA_PATH}/*.jffs2" ||
+		match_files_in_dir "${directory}/${LIVE_MEDIA_PATH}/*.git" ||
+		match_files_in_dir "${directory}/${LIVE_MEDIA_PATH}/*.dir"
 	then
 		[ -n "${mac}" ] && adddirectory="${directory}/${LIVE_MEDIA_PATH}/${mac}"
 		setup_unionfs "${directory}/${LIVE_MEDIA_PATH}" "${rootmnt}" "${adddirectory}"
