@@ -15,7 +15,7 @@ CHARMAP="UTF-8"
 # Valid codesets are: Arabic Armenian CyrAsia CyrKoi CyrSlav Ethiopian
 # Georgian Greek Hebrew Lao Lat15 Lat2 Lat38 Lat7 Thai Uni1 Uni2 Uni3
 # Vietnamese.  Read README.fonts for explanation.
-CODESET="Uni2"
+CODESET="Lat15"
 
 # Valid font faces are: VGA (sizes 8, 14 and 16), Terminus (sizes
 # 12x6, 14, 16, 20x10, 24x12, 28x14 and 32x16), TerminusBold (sizes

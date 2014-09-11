@@ -32,10 +32,13 @@
   </method>
   <method name="Kill">
    <arg name="who" type="s" direction="in"/>
-   <arg name="mode" type="s" direction="in"/>
    <arg name="signal" type="i" direction="in"/>
   </method>
   <method name="ResetFailed"/>
+  <method name="SetProperties">
+   <arg name="runtime" type="b" direction="in"/>
+   <arg name="properties" type="a(sv)" direction="in"/>
+  </method>
   <property name="Id" type="s" access="read"/>
   <property name="Names" type="as" access="read"/>
   <property name="Following" type="s" access="read"/>
@@ -44,11 +47,13 @@
   <property name="Requisite" type="as" access="read"/>
   <property name="RequisiteOverridable" type="as" access="read"/>
   <property name="Wants" type="as" access="read"/>
-  <property name="BindTo" type="as" access="read"/>
+  <property name="BindsTo" type="as" access="read"/>
+  <property name="PartOf" type="as" access="read"/>
   <property name="RequiredBy" type="as" access="read"/>
   <property name="RequiredByOverridable" type="as" access="read"/>
   <property name="WantedBy" type="as" access="read"/>
   <property name="BoundBy" type="as" access="read"/>
+  <property name="ConsistsOf" type="as" access="read"/>
   <property name="Conflicts" type="as" access="read"/>
   <property name="ConflictedBy" type="as" access="read"/>
   <property name="Before" type="as" access="read"/>
@@ -56,9 +61,13 @@
   <property name="OnFailure" type="as" access="read"/>
   <property name="Triggers" type="as" access="read"/>
   <property name="TriggeredBy" type="as" access="read"/>
-  <property name="PropagateReloadTo" type="as" access="read"/>
-  <property name="PropagateReloadFrom" type="as" access="read"/>
+  <property name="PropagatesReloadTo" type="as" access="read"/>
+  <property name="ReloadPropagatedFrom" type="as" access="read"/>
+  <property name="RequiresMountsFor" type="as" access="read"/>
   <property name="Description" type="s" access="read"/>
+  <property name="SourcePath" type="s" access="read"/>
+  <property name="DropInPaths" type="as" access="read"/>
+  <property name="Documentation" type="as" access="read"/>
   <property name="LoadState" type="s" access="read"/>
   <property name="ActiveState" type="s" access="read"/>
   <property name="SubState" type="s" access="read"/>
@@ -85,14 +94,13 @@
   <property name="OnFailureIsolate" type="b" access="read"/>
   <property name="IgnoreOnIsolate" type="b" access="read"/>
   <property name="IgnoreOnSnapshot" type="b" access="read"/>
-  <property name="DefaultControlGroup" type="s" access="read"/>
-  <property name="ControlGroup" type="as" access="read"/>
-  <property name="ControlGroupAttributes" type="a(sss)" access="read"/>
   <property name="NeedDaemonReload" type="b" access="read"/>
   <property name="JobTimeoutUSec" type="t" access="read"/>
   <property name="ConditionTimestamp" type="t" access="read"/>
   <property name="ConditionTimestampMonotonic" type="t" access="read"/>
   <property name="ConditionResult" type="b" access="read"/>
+  <property name="Conditions" type="a(sbbsi)" access="read"/>
   <property name="LoadError" type="(ss)" access="read"/>
+  <property name="Transient" type="b" access="read"/>
  </interface>
 </node>

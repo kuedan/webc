@@ -11,7 +11,7 @@
 /usr/share
 /usr/share/doc
 /lib/i386-linux-gnu/libncurses.so.5
-/usr/lib/i386-linux-gnu/libmenu.so.5
 /usr/lib/i386-linux-gnu/libform.so.5
 /usr/lib/i386-linux-gnu/libpanel.so.5
+/usr/lib/i386-linux-gnu/libmenu.so.5
 /usr/share/doc/libncurses5

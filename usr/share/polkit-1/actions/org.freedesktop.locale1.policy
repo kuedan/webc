@@ -8,21 +8,18 @@
 
         <action id="org.freedesktop.locale1.set-locale">
                 <description>Set system locale</description>
-                <description xml:lang="pl">Ustawienie lokalizacji systemu</description>
                 <message>Authentication is required to set the system locale.</message>
-                <message xml:lang="pl">Wymagane jest uwierzytelnienie, aby ustawić lokalizację systemu.</message>
                 <defaults>
                         <allow_any>auth_admin_keep</allow_any>
                         <allow_inactive>auth_admin_keep</allow_inactive>
                         <allow_active>auth_admin_keep</allow_active>
                 </defaults>
+                <annotate key="org.freedesktop.policykit.imply">org.freedesktop.locale1.set-keyboard</annotate>
         </action>
 
         <action id="org.freedesktop.locale1.set-keyboard">
                 <description>Set system keyboard settings</description>
-                <description xml:lang="pl">Ustawienie klawiatury systemu</description>
                 <message>Authentication is required to set the system keyboard settings.</message>
-                <message xml:lang="pl">Wymagane jest uwierzytelnienie, aby ustawić klawiaturę systemu.</message>
                 <defaults>
                         <allow_any>auth_admin_keep</allow_any>
                         <allow_inactive>auth_admin_keep</allow_inactive>

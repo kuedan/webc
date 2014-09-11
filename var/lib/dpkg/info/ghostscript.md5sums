@@ -2,7 +2,7 @@ ae4cfa6fc465e761f527766abd68ecf3  usr/bin/dumphint
 4927e718029be0cf9b2a642c1c23fd8b  usr/bin/dvipdf
 9638e0d8169f75c03b018e12ca135a43  usr/bin/eps2eps
 480896e34158475fbca9370de74c2244  usr/bin/font2c
-c9ed8072bc66126ff1915bd16d356b14  usr/bin/gs
+8b487c79541d3da14e31de6ef8b803c0  usr/bin/gs
 62b1afe099f9ed1adf548a67e218b233  usr/bin/gsbj
 6957c60cd2db49f4cc2b2d38c7b2d65e  usr/bin/gsdj
 c1d2c54c49341d3e035e001d2856ffa2  usr/bin/gsdj500
@@ -28,10 +28,10 @@ da226b3d22b2a3fdc722a69b65932daf  usr/bin/ps2ps2
 de2c7e5c37e56538e8f6bedbd52bd702  usr/bin/wftopfa
 8b3bb63e108a82b79a9da7dfabaa27d7  usr/sbin/update-gsfontmap
 79e5f6b38929618ddd270e11f690ded3  usr/share/doc/ghostscript/NEWS.Debian.gz
-5612e2c5b29761fa8d3c99c968f630d5  usr/share/doc/ghostscript/README.Debian
-8c0ec4a6979d9b9bf00ce80eb3d498e4  usr/share/doc/ghostscript/buildinfo_i386.gz
-c5011cf3f1ac5f323b98f914bd51e87d  usr/share/doc/ghostscript/changelog.Debian.gz
-273ee76339cee1d9069beeb945d74670  usr/share/doc/ghostscript/copyright
+5435d2d6f5b1a5bf7d852dbcd13301e4  usr/share/doc/ghostscript/README.Debian
+1145408bdead345ec52a217543813f57  usr/share/doc/ghostscript/buildinfo_i386.gz
+2f7764e5ef7543fe5e6babd6c976870c  usr/share/doc/ghostscript/changelog.Debian.gz
+d879c86a3ecc181f4a14ba094a941948  usr/share/doc/ghostscript/copyright
 dc9114e426c769d12a8b36217b472a24  usr/share/man/de/man1/dvipdf.1.gz
 4b56e654f85223dd6489308a81b57dbe  usr/share/man/de/man1/font2c.1.gz
 5dfada96d4b46294b4230a03a43c2af9  usr/share/man/de/man1/gsnd.1.gz
@@ -45,7 +45,7 @@ c3a6e43512e5c09f0b35010e4ec8ebc8  usr/share/man/de/man1/pdfopt.1.gz
 7b18ce5db2a2c1d154b99adba3b1c57f  usr/share/man/de/man1/wftopfa.1.gz
 69aefcb57a6e30f1a07ba09be73753fe  usr/share/man/man1/dvipdf.1.gz
 6fceadaa7f20eb7ec29bd7a8e32f3122  usr/share/man/man1/font2c.1.gz
-3b636291d336197df91d3359c9262496  usr/share/man/man1/gs.1.gz
+1e38107507dde13d95fc604daa6f0701  usr/share/man/man1/gs.1.gz
 5c768b67e46127aef8bd2188ab7e8f6b  usr/share/man/man1/gslp.1.gz
 8d43cc6460fa7128c1f3a29e9ac9f31e  usr/share/man/man1/gsnd.1.gz
 3c4dc2e943fb4d24a7a4c908dbf570f8  usr/share/man/man1/pdf2dsc.1.gz

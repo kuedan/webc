@@ -86,6 +86,7 @@ libgs.so.9 libgs9 #MINVER#
  MulDiv_Round@Base 8.61.dfsg.1
  MulTo64@Base 8.61.dfsg.1
  Order64@Base 8.61.dfsg.1
+ PDFDocEncodingLookup@Base 9.05~dfsg-9
  QuadGlyphList@Base 9.05~
  Range3_default@Base 8.61.dfsg.1
  Range4_default@Base 8.61.dfsg.1

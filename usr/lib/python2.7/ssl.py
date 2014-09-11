@@ -56,6 +56,7 @@ PROTOCOL_TLSv1
 """
 
 import textwrap
+import re
 
 import _ssl             # if we can't import it, let the error propagate
 
@@ -89,6 +90,7 @@ else:
 
 from socket import socket, _fileobject, _delegate_methods, error as socket_error
 from socket import getnameinfo as _getnameinfo
+from socket import SOL_SOCKET, SO_TYPE, SOCK_STREAM
 import base64        # for DER-to-PEM translation
 import errno
 
@@ -96,6 +98,100 @@ import errno
 # (OpenSSL's default setting is 'DEFAULT:!aNULL:!eNULL')
 _DEFAULT_CIPHERS = 'DEFAULT:!aNULL:!eNULL:!LOW:!EXPORT:!SSLv2'
 
+class CertificateError(ValueError):
+    pass
+
+
+def _dnsname_match(dn, hostname, max_wildcards=1):
+    """Matching according to RFC 6125, section 6.4.3
+
+    http://tools.ietf.org/html/rfc6125#section-6.4.3
+    """
+    pats = []
+    if not dn:
+        return False
+
+    dn_split = dn.split(r'.')
+    leftmost = dn_split[0]
+    remainder = dn_split[1:]
+
+    wildcards = leftmost.count('*')
+    if wildcards > max_wildcards:
+        # Issue #17980: avoid denials of service by refusing more
+        # than one wildcard per fragment.  A survery of established
+        # policy among SSL implementations showed it to be a
+        # reasonable choice.
+        raise CertificateError(
+            "too many wildcards in certificate DNS name: " + repr(dn))
+
+    # speed up common case w/o wildcards
+    if not wildcards:
+        return dn.lower() == hostname.lower()
+
+    # RFC 6125, section 6.4.3, subitem 1.
+    # The client SHOULD NOT attempt to match a presented identifier in which
+    # the wildcard character comprises a label other than the left-most label.
+    if leftmost == '*':
+        # When '*' is a fragment by itself, it matches a non-empty dotless
+        # fragment.
+        pats.append('[^.]+')
+    elif leftmost.startswith('xn--') or hostname.startswith('xn--'):
+        # RFC 6125, section 6.4.3, subitem 3.
+        # The client SHOULD NOT attempt to match a presented identifier
+        # where the wildcard character is embedded within an A-label or
+        # U-label of an internationalized domain name.
+        pats.append(re.escape(leftmost))
+    else:
+        # Otherwise, '*' matches any dotless string, e.g. www*
+        pats.append(re.escape(leftmost).replace(r'\*', '[^.]*'))
+
+    # add the remaining fragments, ignore any wildcards
+    for frag in remainder:
+        pats.append(re.escape(frag))
+
+    pat = re.compile(r'\A' + r'\.'.join(pats) + r'\Z', re.IGNORECASE)
+    return pat.match(hostname)
+
+
+def match_hostname(cert, hostname):
+    """Verify that *cert* (in decoded format as returned by
+    SSLSocket.getpeercert()) matches the *hostname*.  RFC 2818 and RFC 6125
+    rules are followed, but IP addresses are not accepted for *hostname*.
+
+    CertificateError is raised on failure. On success, the function
+    returns nothing.
+    """
+    if not cert:
+        raise ValueError("empty or no certificate")
+    dnsnames = []
+    san = cert.get('subjectAltName', ())
+    for key, value in san:
+        if key == 'DNS':
+            if _dnsname_match(value, hostname):
+                return
+            dnsnames.append(value)
+    if not dnsnames:
+        # The subject is only checked when there is no dNSName entry
+        # in subjectAltName
+        for sub in cert.get('subject', ()):
+            for key, value in sub:
+                # XXX according to RFC 2818, the most specific Common Name
+                # must be used.
+                if key == 'commonName':
+                    if _dnsname_match(value, hostname):
+                        return
+                    dnsnames.append(value)
+    if len(dnsnames) > 1:
+        raise CertificateError("hostname %r "
+            "doesn't match either of %s"
+            % (hostname, ', '.join(map(repr, dnsnames))))
+    elif len(dnsnames) == 1:
+        raise CertificateError("hostname %r "
+            "doesn't match %r"
+            % (hostname, dnsnames[0]))
+    else:
+        raise CertificateError("no appropriate commonName or "
+            "subjectAltName fields were found")
 
 class SSLSocket(socket):
 
@@ -108,6 +204,10 @@ class SSLSocket(socket):
                  ssl_version=PROTOCOL_SSLv23, ca_certs=None,
                  do_handshake_on_connect=True,
                  suppress_ragged_eofs=True, ciphers=None):
+        # Can't use sock.type as other flags (such as SOCK_NONBLOCK) get
+        # mixed in.
+        if sock.getsockopt(SOL_SOCKET, SO_TYPE) != SOCK_STREAM:
+            raise NotImplementedError("only stream sockets are supported")
         socket.__init__(self, _sock=sock._sock)
         # The initializer for socket overrides the methods send(), recv(), etc.
         # in the instancce, which we don't need -- but we want to provide the
@@ -313,17 +413,19 @@ class SSLSocket(socket):
                                     self.cert_reqs, self.ssl_version,
                                     self.ca_certs, self.ciphers)
         try:
-            socket.connect(self, addr)
-            if self.do_handshake_on_connect:
-                self.do_handshake()
-        except socket_error as e:
             if return_errno:
-                return e.errno
+                rc = socket.connect_ex(self, addr)
             else:
-                self._sslobj = None
-                raise e
-        self._connected = True
-        return 0
+                rc = None
+                socket.connect(self, addr)
+            if not rc:
+                if self.do_handshake_on_connect:
+                    self.do_handshake()
+                self._connected = True
+            return rc
+        except socket_error:
+            self._sslobj = None
+            raise
 
     def connect(self, addr):
         """Connects to remote ADDR, and then wraps the connection in
@@ -342,17 +444,21 @@ class SSLSocket(socket):
         SSL channel, and the address of the remote client."""
 
         newsock, addr = socket.accept(self)
-        return (SSLSocket(newsock,
-                          keyfile=self.keyfile,
-                          certfile=self.certfile,
-                          server_side=True,
-                          cert_reqs=self.cert_reqs,
-                          ssl_version=self.ssl_version,
-                          ca_certs=self.ca_certs,
-                          ciphers=self.ciphers,
-                          do_handshake_on_connect=self.do_handshake_on_connect,
-                          suppress_ragged_eofs=self.suppress_ragged_eofs),
-                addr)
+        try:
+            return (SSLSocket(newsock,
+                              keyfile=self.keyfile,
+                              certfile=self.certfile,
+                              server_side=True,
+                              cert_reqs=self.cert_reqs,
+                              ssl_version=self.ssl_version,
+                              ca_certs=self.ca_certs,
+                              ciphers=self.ciphers,
+                              do_handshake_on_connect=self.do_handshake_on_connect,
+                              suppress_ragged_eofs=self.suppress_ragged_eofs),
+                    addr)
+        except socket_error as e:
+            newsock.close()
+            raise e
 
     def makefile(self, mode='r', bufsize=-1):
 

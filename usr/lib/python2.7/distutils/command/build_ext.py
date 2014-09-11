@@ -231,12 +231,10 @@ class build_ext (Command):
                 # building python standard extensions
                 self.library_dirs.append('.')
 
-        # for extensions under Linux or Solaris with a shared Python library,
+        # For building extensions with a shared Python library,
         # Python's library directory must be appended to library_dirs
-        sysconfig.get_config_var('Py_ENABLE_SHARED')
-        if ((sys.platform.startswith('linux') or sys.platform.startswith('gnu')
-             or sys.platform.startswith('sunos'))
-            and sysconfig.get_config_var('Py_ENABLE_SHARED')):
+        # See Issues: #1600860, #4366
+        if False and (sysconfig.get_config_var('Py_ENABLE_SHARED')):
             if sys.executable.startswith(os.path.join(sys.exec_prefix, "bin")):
                 # building third party extensions
                 self.library_dirs.append(sysconfig.get_config_var('LIBDIR'))
@@ -757,7 +755,7 @@ class build_ext (Command):
             return ext.libraries
         else:
             from distutils import sysconfig
-            if sysconfig.get_config_var('Py_ENABLE_SHARED'):
+            if False and sysconfig.get_config_var('Py_ENABLE_SHARED'):
                 template = "python%d.%d"
                 pythonlib = (template %
                              (sys.hexversion >> 24, (sys.hexversion >> 16) & 0xff))

@@ -1,4 +1,5 @@
-7c9fed718de477657a2364b115eb8d12  usr/lib/xorg/modules/drivers/mach64_drv.so
-733a465dc9dc36bd8d0fa367679dbcc1  usr/share/doc/xserver-xorg-video-mach64/changelog.Debian.gz
-755c68b4b2a2b5c758dcfd508f68447e  usr/share/doc/xserver-xorg-video-mach64/changelog.gz
+48921ab8b8bba5e710bc06afa5ac8f9d  usr/lib/xorg/modules/drivers/mach64_drv.so
+45971eecea96907bfdb9f577a36f40de  usr/share/doc/xserver-xorg-video-mach64/changelog.Debian.gz
+fb8bf6303f9d23e67303d1ace96a3e72  usr/share/doc/xserver-xorg-video-mach64/changelog.Debian.i386.gz
+ecf1df582d8aeebbdcaca1d7822df426  usr/share/doc/xserver-xorg-video-mach64/changelog.gz
 1fb6b98eb49de2a94f5a12fa6d02627f  usr/share/doc/xserver-xorg-video-mach64/copyright

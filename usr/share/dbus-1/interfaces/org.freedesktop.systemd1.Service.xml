@@ -7,13 +7,16 @@
   <property name="PIDFile" type="s" access="read"/>
   <property name="NotifyAccess" type="s" access="read"/>
   <property name="RestartUSec" type="t" access="read"/>
-  <property name="TimeoutUSec" type="t" access="read"/>
+  <property name="TimeoutStartUSec" type="t" access="read"/>
+  <property name="TimeoutStopUSec" type="t" access="read"/>
   <property name="WatchdogUSec" type="t" access="read"/>
   <property name="WatchdogTimestamp" type="t" access="read"/>
   <property name="WatchdogTimestampMonotonic" type="t" access="read"/>
   <property name="StartLimitInterval" type="t" access="read"/>
   <property name="StartLimitBurst" type="u" access="read"/>
-  <property name="StartLimitAction" type="s" access="read"/>
+  <property name="StartLimitAction" type="s" access="readwrite"/>
+  <property name="Slice" type="s" access="read"/>
+  <property name="ControlGroup" type="s" access="read"/>
   <property name="ExecStartPre" type="a(sasbttuii)" access="read"/>
   <property name="ExecStart" type="a(sasbttuii)" access="read"/>
   <property name="ExecStartPost" type="a(sasbttuii)" access="read"/>
@@ -21,6 +24,7 @@
   <property name="ExecStop" type="a(sasbttuii)" access="read"/>
   <property name="ExecStopPost" type="a(sasbttuii)" access="read"/>
   <property name="Environment" type="as" access="read"/>
+  <property name="EnvironmentFiles" type="a(sb)" access="read"/>
   <property name="UMask" type="u" access="read"/>
   <property name="LimitCPU" type="t" access="read"/>
   <property name="LimitFSIZE" type="t" access="read"/>
@@ -46,7 +50,7 @@
   <property name="CPUSchedulingPolicy" type="i" access="read"/>
   <property name="CPUSchedulingPriority" type="i" access="read"/>
   <property name="CPUAffinity" type="ay" access="read"/>
-  <property name="TimerSlackNS" type="t" access="read"/>
+  <property name="TimerSlackNSec" type="t" access="read"/>
   <property name="CPUSchedulingResetOnFork" type="b" access="read"/>
   <property name="NonBlocking" type="b" access="read"/>
   <property name="StandardInput" type="s" access="read"/>
@@ -72,14 +76,27 @@
   <property name="InaccessibleDirectories" type="as" access="read"/>
   <property name="MountFlags" type="t" access="read"/>
   <property name="PrivateTmp" type="b" access="read"/>
+  <property name="PrivateNetwork" type="b" access="read"/>
   <property name="SameProcessGroup" type="b" access="read"/>
+  <property name="UtmpIdentifier" type="s" access="read"/>
+  <property name="IgnoreSIGPIPE" type="b" access="read"/>
+  <property name="NoNewPrivileges" type="b" access="read"/>
+  <property name="SystemCallFilter" type="au" access="read"/>
   <property name="KillMode" type="s" access="read"/>
   <property name="KillSignal" type="i" access="read"/>
-  <property name="UtmpIdentifier" type="s" access="read"/>
-  <property name="ControlGroupModify" type="b" access="read"/>
-  <property name="ControlGroupPersistent" type="b" access="read"/>
-  <property name="PrivateNetwork" type="b" access="read"/>
-  <property name="IgnoreSIGPIPE" type="b" access="read"/>
+  <property name="SendSIGKILL" type="b" access="read"/>
+  <property name="SendSIGHUP" type="b" access="read"/>
+  <property name="CPUAccounting" type="b" access="read"/>
+  <property name="CPUShares" type="t" access="read"/>
+  <property name="BlockIOAccounting" type="b" access="read"/>
+  <property name="BlockIOWeight" type="t" access="read"/>
+  <property name="BlockIODeviceWeight" type="a(st)" access="read"/>
+  <property name="BlockIOReadBandwidth=" type="a(st)" access="read"/>
+  <property name="BlockIOWriteBandwidth=" type="a(st)" access="read"/>
+  <property name="MemoryAccounting" type="b" access="read"/>
+  <property name="MemoryLimit" type="t" access="read"/>
+  <property name="DevicePolicy" type="s" access="read"/>
+  <property name="DeviceAllow" type="a(ss)" access="read"/>
   <property name="PermissionsStartOnly" type="b" access="read"/>
   <property name="RootDirectoryStartOnly" type="b" access="read"/>
   <property name="RemainAfterExit" type="b" access="read"/>
@@ -94,10 +111,6 @@
   <property name="ControlPID" type="u" access="read"/>
   <property name="BusName" type="s" access="read"/>
   <property name="StatusText" type="s" access="read"/>
-  <property name="FsckPassNo" type="i" access="read"/>
   <property name="Result" type="s" access="read"/>
-  <property name="SysVStartPriority" type="i" access="read"/>
-  <property name="SysVRunLevels" type="s" access="read"/>
-  <property name="SysVPath" type="s" access="read"/>
  </interface>
 </node>

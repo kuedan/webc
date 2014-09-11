@@ -1,0 +1,12 @@
+auto
+/usr/bin/lzip
+lzip.1.gz
+/usr/share/man/man1/lzip.1.gz
+lzip.info.gz
+/usr/share/info/lzip.info.gz
+
+/usr/bin/lzip.not-parallel
+100
+/usr/share/man/man1/lzip.not-parallel.1.gz
+/usr/share/info/lzip.not-parallel.info.gz
+

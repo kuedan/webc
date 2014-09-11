@@ -1,8 +1,8 @@
-8f2f61f8380548a362059af3866c6ead  usr/bin/startx
-2de6473088f00c15e582754588d58570  usr/bin/xinit
+8077dc20541003106e826d3e2d8c0e33  usr/bin/startx
+3898da584dae94d789d3e3be8a8bc05b  usr/bin/xinit
 5ba0400b8e6384d7256bc1031be323ee  usr/share/doc/xinit/NEWS.Debian.gz
-58a1589a172c84281df9a727a4e05239  usr/share/doc/xinit/changelog.Debian.gz
-51f747a8242b255546aa3f9dc3862f6f  usr/share/doc/xinit/changelog.gz
+683d657892cf97f64f87457c825acdad  usr/share/doc/xinit/changelog.Debian.gz
+b0f5c2ce28cf98ec12c9d2d0ff0b45e3  usr/share/doc/xinit/changelog.gz
 91b9035fc9f7683f3aab67114843a69f  usr/share/doc/xinit/copyright
-8b2ff8e3e18aa845424a17a0c6e62209  usr/share/man/man1/startx.1.gz
-7af9070bb753542c6fa97e7e000036ff  usr/share/man/man1/xinit.1.gz
+e85cfe7e7c01801676332488c56db3bd  usr/share/man/man1/startx.1.gz
+78b64640349b146183918917793a5a80  usr/share/man/man1/xinit.1.gz

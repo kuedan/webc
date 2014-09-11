@@ -1,7 +1,7 @@
 79e5f6b38929618ddd270e11f690ded3  usr/share/doc/libgs9-common/NEWS.Debian.gz
-20b64cd99abe8fc60662d8d12f62fb4b  usr/share/doc/libgs9-common/buildinfo_all.gz
-c5011cf3f1ac5f323b98f914bd51e87d  usr/share/doc/libgs9-common/changelog.Debian.gz
-273ee76339cee1d9069beeb945d74670  usr/share/doc/libgs9-common/copyright
+542a125c12cb8f832f5efc295fb09ed6  usr/share/doc/libgs9-common/buildinfo_all.gz
+2f7764e5ef7543fe5e6babd6c976870c  usr/share/doc/libgs9-common/changelog.Debian.gz
+d879c86a3ecc181f4a14ba094a941948  usr/share/doc/libgs9-common/copyright
 4df49fc2605ef79ccf944c69484d11a2  usr/share/ghostscript/9.05/Resource/CIDFont/ArtifexBullet
 edb6d2c29fdd4ef01ad385d4e0ec36c6  usr/share/ghostscript/9.05/Resource/ColorSpace/DefaultCMYK
 0f5fc2d1c79f7893a98a9465c9454f74  usr/share/ghostscript/9.05/Resource/ColorSpace/DefaultGray
@@ -107,9 +107,9 @@ ceb7ef5eee576182e8719aacf2a325b9  usr/share/ghostscript/9.05/Resource/Init/gs_tt
 7b67ea736242715489375c25dfd7ffe3  usr/share/ghostscript/9.05/Resource/Init/gs_typ42.ps
 1e06fd6dd74b9bb81f18108b308ac3b6  usr/share/ghostscript/9.05/Resource/Init/gs_type1.ps
 843e8aa45c121be8be4b30dde3d35fe8  usr/share/ghostscript/9.05/Resource/Init/gs_wan_e.ps
-26762694caeaaf6d147d635a29f98d3a  usr/share/ghostscript/9.05/Resource/Init/pdf_base.ps
+7157caffb61661e21f836ae1f7dd7cab  usr/share/ghostscript/9.05/Resource/Init/pdf_base.ps
 76eec87b72310979f82d701dfe71bbf1  usr/share/ghostscript/9.05/Resource/Init/pdf_cslayer.ps
-0f30f2f7475581a189430578a5c2101b  usr/share/ghostscript/9.05/Resource/Init/pdf_draw.ps
+e3d3d251b8966d1963f7a52ce7587580  usr/share/ghostscript/9.05/Resource/Init/pdf_draw.ps
 930bd53b957d8bec2b4552a67e8a1a67  usr/share/ghostscript/9.05/Resource/Init/pdf_font.ps
 e5aaccc387ff62307fc7ab89046126d3  usr/share/ghostscript/9.05/Resource/Init/pdf_main.ps
 57a2fb41faf00fc348f45c0ceacd502e  usr/share/ghostscript/9.05/Resource/Init/pdf_ops.ps

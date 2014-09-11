@@ -1,0 +1,8 @@
+ce47fd7ec888ea2771a374198bb9cdf2  usr/lib/i386-linux-gnu/i686/cmov/libavcodec.so.56.0.0
+0a2ea6f621c4b458b725d83ff0f66cb7  usr/lib/i386-linux-gnu/libavcodec.so.56.0.0
+7906be10ad1a6590b1828dca02678003  usr/share/doc/libavcodec56/NEWS.Debian.gz
+777734f13dbf632543e327eaf6951944  usr/share/doc/libavcodec56/changelog.Debian.gz
+f04eabbd5601188df8ca89084ddf3c99  usr/share/doc/libavcodec56/changelog.gz
+bd6217c476b2a95f7f773daccbcbbc36  usr/share/doc/libavcodec56/codecs-i386.txt.gz
+323125fc98bc748defccc624b74fd752  usr/share/doc/libavcodec56/copyright
+954f773f7f877dcc577c99eac4e54808  usr/share/lintian/overrides/libavcodec56

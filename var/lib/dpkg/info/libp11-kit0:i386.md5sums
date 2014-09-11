@@ -1,5 +1,5 @@
-6512d1b5ec0cada21b0a014b4d99fd30  usr/lib/i386-linux-gnu/libp11-kit.so.0.0.0
-3851b6283274e3b4e68f2f3f6db2ea9d  usr/share/doc/libp11-kit0/changelog.Debian.gz
-adf5d22189a586ac6e5d87409faf7eb5  usr/share/doc/libp11-kit0/changelog.gz
-46ebd8d6880cd8aa5776705a2371467e  usr/share/doc/libp11-kit0/copyright
-7f7470597d4be148b90f2c7fa33e3533  usr/share/doc/libp11-kit0/examples/pkcs11.conf.example
+ccb5b37b21e5b761c7abc6bc28eb33f5  usr/lib/i386-linux-gnu/libp11-kit.so.0.0.0
+0f47dc2983a25bb69b4b94739874b32e  usr/share/doc/libp11-kit0/changelog.Debian.gz
+394db5f739b8fa8b6795b0bafa4b510e  usr/share/doc/libp11-kit0/changelog.gz
+93de5216e9521b84f070a1fd3c62660a  usr/share/doc/libp11-kit0/copyright
+161f8ec95326f47d853cb7c1ee76c7b8  usr/share/doc/libp11-kit0/examples/pkcs11.conf.example

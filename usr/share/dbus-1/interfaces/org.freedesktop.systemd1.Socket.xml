@@ -5,11 +5,14 @@
   <property name="BindIPv6Only" type="b" access="read"/>
   <property name="Backlog" type="u" access="read"/>
   <property name="TimeoutUSec" type="t" access="read"/>
+  <property name="Slice" type="s" access="read"/>
+  <property name="ControlGroup" type="s" access="read"/>
   <property name="ExecStartPre" type="a(sasbttuii)" access="read"/>
   <property name="ExecStartPost" type="a(sasbttuii)" access="read"/>
   <property name="ExecStopPre" type="a(sasbttuii)" access="read"/>
   <property name="ExecStopPost" type="a(sasbttuii)" access="read"/>
   <property name="Environment" type="as" access="read"/>
+  <property name="EnvironmentFiles" type="a(sb)" access="read"/>
   <property name="UMask" type="u" access="read"/>
   <property name="LimitCPU" type="t" access="read"/>
   <property name="LimitFSIZE" type="t" access="read"/>
@@ -35,7 +38,7 @@
   <property name="CPUSchedulingPolicy" type="i" access="read"/>
   <property name="CPUSchedulingPriority" type="i" access="read"/>
   <property name="CPUAffinity" type="ay" access="read"/>
-  <property name="TimerSlackNS" type="t" access="read"/>
+  <property name="TimerSlackNSec" type="t" access="read"/>
   <property name="CPUSchedulingResetOnFork" type="b" access="read"/>
   <property name="NonBlocking" type="b" access="read"/>
   <property name="StandardInput" type="s" access="read"/>
@@ -61,14 +64,27 @@
   <property name="InaccessibleDirectories" type="as" access="read"/>
   <property name="MountFlags" type="t" access="read"/>
   <property name="PrivateTmp" type="b" access="read"/>
+  <property name="PrivateNetwork" type="b" access="read"/>
   <property name="SameProcessGroup" type="b" access="read"/>
+  <property name="UtmpIdentifier" type="s" access="read"/>
+  <property name="IgnoreSIGPIPE" type="b" access="read"/>
+  <property name="NoNewPrivileges" type="b" access="read"/>
+  <property name="SystemCallFilter" type="au" access="read"/>
   <property name="KillMode" type="s" access="read"/>
   <property name="KillSignal" type="i" access="read"/>
-  <property name="UtmpIdentifier" type="s" access="read"/>
-  <property name="ControlGroupModify" type="b" access="read"/>
-  <property name="ControlGroupPersistent" type="b" access="read"/>
-  <property name="PrivateNetwork" type="b" access="read"/>
-  <property name="IgnoreSIGPIPE" type="b" access="read"/>
+  <property name="SendSIGKILL" type="b" access="read"/>
+  <property name="SendSIGHUP" type="b" access="read"/>
+  <property name="CPUAccounting" type="b" access="read"/>
+  <property name="CPUShares" type="t" access="read"/>
+  <property name="BlockIOAccounting" type="b" access="read"/>
+  <property name="BlockIOWeight" type="t" access="read"/>
+  <property name="BlockIODeviceWeight" type="a(st)" access="read"/>
+  <property name="BlockIOReadBandwidth=" type="a(st)" access="read"/>
+  <property name="BlockIOWriteBandwidth=" type="a(st)" access="read"/>
+  <property name="MemoryAccounting" type="b" access="read"/>
+  <property name="MemoryLimit" type="t" access="read"/>
+  <property name="DevicePolicy" type="s" access="read"/>
+  <property name="DeviceAllow" type="a(ss)" access="read"/>
   <property name="ControlPID" type="u" access="read"/>
   <property name="BindToDevice" type="s" access="read"/>
   <property name="DirectoryMode" type="u" access="read"/>
@@ -92,6 +108,11 @@
   <property name="NConnections" type="u" access="read"/>
   <property name="MessageQueueMaxMessages" type="x" access="read"/>
   <property name="MessageQueueMessageSize" type="x" access="read"/>
+  <property name="Listen" type="a(ss)" access="read"/>
   <property name="Result" type="s" access="read"/>
+  <property name="ReusePort" type="b" access="read"/>
+  <property name="SmackLabel" type="s" access="read"/>
+  <property name="SmackLabelIPIn" type="s" access="read"/>
+  <property name="SmackLabelIPOut" type="s" access="read"/>
  </interface>
 </node>

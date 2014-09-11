@@ -6,10 +6,10 @@
 /usr/share
 /usr/share/doc
 /usr/share/doc/libvorbis0a
-/usr/share/doc/libvorbis0a/changelog.Debian.gz
-/usr/share/doc/libvorbis0a/copyright
 /usr/share/doc/libvorbis0a/CHANGES.gz
 /usr/share/doc/libvorbis0a/changelog.gz
+/usr/share/doc/libvorbis0a/copyright
+/usr/share/doc/libvorbis0a/changelog.Debian.gz
 /usr/share/lintian
 /usr/share/lintian/overrides
 /usr/share/lintian/overrides/libvorbis0a

@@ -1,5 +1,5 @@
-93013dba4dfd0d6911bbd532d02ee569  usr/lib/i386-linux-gnu/libvdpau.so.1.0.0
-c340e71cf7dbe4127cb4b81dac527dc8  usr/lib/i386-linux-gnu/vdpau/libvdpau_trace.so.1.0.0
-4c0adbedec5aad5d01c02f12225ef4a8  usr/share/doc/libvdpau1/changelog.Debian.gz
-cfad52596d668ea492a2deace9296400  usr/share/doc/libvdpau1/changelog.gz
+cd476ec9cfa0390693293364355b95d1  usr/lib/i386-linux-gnu/libvdpau.so.1.0.0
+351ead9480550e5f0e180fb399fc2627  usr/lib/i386-linux-gnu/vdpau/libvdpau_trace.so.1.0.0
+2418076fafe3a703cf4888bd7f02680f  usr/share/doc/libvdpau1/changelog.Debian.gz
+ce1b6d2b90b6fb181ee653b80a7a3d48  usr/share/doc/libvdpau1/changelog.gz
 3b50af9f507bc3966e0b2d68825b9913  usr/share/doc/libvdpau1/copyright

@@ -1,6 +1,5 @@
 /.
 /var
-/var/run
 /var/lib
 /var/lib/dhcp
 /sbin
@@ -19,7 +18,6 @@
 /usr/share/doc
 /usr/share/doc/isc-dhcp-client
 /usr/share/doc/isc-dhcp-client/copyright
-/usr/share/doc/isc-dhcp-client/README.Debian
 /usr/share/doc/isc-dhcp-client/NEWS.Debian.gz
 /usr/share/doc/isc-dhcp-client/changelog.Debian.gz
 /usr/share/man
@@ -29,6 +27,3 @@
 /usr/share/man/man5
 /usr/share/man/man5/dhclient.conf.5.gz
 /usr/share/man/man5/dhclient.leases.5.gz
-/usr/share/lintian
-/usr/share/lintian/overrides
-/usr/share/lintian/overrides/isc-dhcp-client

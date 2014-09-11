@@ -1,4 +1,6 @@
-3f2b62960679b2d20e8a7fb1dc35c83e  usr/lib/i386-linux-gnu/gio/modules/libdconfsettings.so
-fa568ceec3f3fc4f226979788db7eda8  usr/share/doc/dconf-gsettings-backend/NEWS.gz
-795f3ec17448c03d257cce09cfafd845  usr/share/doc/dconf-gsettings-backend/changelog.Debian.gz
+a31b9d210839a031d9b86cc456bee9d8  usr/lib/i386-linux-gnu/gio/modules/libdconfsettings.so
+715d979c7e78425cbdbe53291e3d4406  usr/share/doc/dconf-gsettings-backend/NEWS.Debian.gz
+36fad445455da3571f36339088075e4b  usr/share/doc/dconf-gsettings-backend/NEWS.gz
+68765f6443a18433d0b37b92c76fcb94  usr/share/doc/dconf-gsettings-backend/README
+19a1899dca710eb7635bdd31adea3f0c  usr/share/doc/dconf-gsettings-backend/changelog.Debian.gz
 cf470c91ee78366d09eb19042268ae9f  usr/share/doc/dconf-gsettings-backend/copyright

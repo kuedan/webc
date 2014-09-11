@@ -19,7 +19,7 @@ PATH=/sbin:/bin
 . /lib/init/mount-functions.sh
 
 # May be run several times, so must be idempotent.
-# $1: Mount mode, to allow for remounting and mtab updating
+# $1: Mount mode, to allow for remounting
 mount_filesystems () {
 	MNTMODE="$1"
 
@@ -32,11 +32,7 @@ mount_filesystems () {
 	#
 	# Mount proc filesystem on /proc
 	#
-<<<<<<< HEAD
-	domount "$MNTMODE" proc "" /proc proc "-onodev,noexec,nosuid,hidepid=2"
-=======
 	domount "$MNTMODE" proc "" /proc proc "-onodev,noexec,nosuid"
->>>>>>> parent of 5bf0e33... aggressively remove sysv stuff just to see what happens
 
 	#
 	# Mount sysfs on /sys
@@ -46,27 +42,16 @@ mount_filesystems () {
 	then
 		domount "$MNTMODE" sysfs "" /sys sysfs "-onodev,noexec,nosuid"
 	fi
-<<<<<<< HEAD
 
-	#
-	# Mount cgroup on /sys/fs/cgroup
-	#
-	# Only mount cgroup if it is supported (kernel >= 2.6.32)
-	if grep -E -qs "cgroup\$" /proc/filesystems
+	if [ -d /sys/fs/pstore ]
 	then
-		domount "$MNTMODE" cgroup "" /sys/fs/cgroup cgroup "-onodev,noexec,nosuid"
+		domount "$MNTMODE" pstore "" /sys/fs/pstore pstore ""
 	fi
 
-	#
-	# Mount securityfs on /sys/kernel/security
-	#
-	# Only mount securityfs if it is supported (kernel >= 2.6.14)
-	if grep -E -qs "securityfs\$" /proc/filesystems
+	if [ -d /sys/kernel/config ]
 	then
-		domount "$MNTMODE" securityfs "" /sys/kernel/security securityfs "-onodev,noexec,nosuid"
+		domount "$MNTMODE" configfs "" /sys/kernel/config configfs ""
 	fi
-=======
->>>>>>> parent of 5bf0e33... aggressively remove sysv stuff just to see what happens
 }
 
 case "$1" in
@@ -76,9 +61,6 @@ case "$1" in
 	;;
   start)
 	mount_filesystems mount_noupdate
-	;;
-  mtab)
-	mount_filesystems mtab
 	;;
   restart|reload|force-reload)
 	mount_filesystems remount

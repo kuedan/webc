@@ -1,0 +1,7 @@
+66967ce5f285ebad2c34fc8061fa90e5  usr/lib/i386-linux-gnu/i686/cmov/libavutil.so.54.3.0
+a074f597d2858897e9ad6161aa511c75  usr/lib/i386-linux-gnu/libavutil.so.54.3.0
+7906be10ad1a6590b1828dca02678003  usr/share/doc/libavutil54/NEWS.Debian.gz
+777734f13dbf632543e327eaf6951944  usr/share/doc/libavutil54/changelog.Debian.gz
+f04eabbd5601188df8ca89084ddf3c99  usr/share/doc/libavutil54/changelog.gz
+323125fc98bc748defccc624b74fd752  usr/share/doc/libavutil54/copyright
+ef394655a4898ec8fd8d5976f57b7313  usr/share/lintian/overrides/libavutil54

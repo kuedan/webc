@@ -1,8 +1,8 @@
-df451ce70d0d12d5681800ae9e23db24  usr/bin/lzip.not-parallel
-f5829786d17a4e2ca77e080a1f4b7cf2  usr/share/doc/lzip/NEWS.gz
-aeac6c82dc26701a8f57bc42b76476cb  usr/share/doc/lzip/README
-6ce0c6a920402067a4a3e712a1978526  usr/share/doc/lzip/changelog.Debian.gz
-e39510e6c0bf2445d137c6ae00b9c0d8  usr/share/doc/lzip/changelog.gz
-73bc8729d0bf439b4cfe73c94d1ac8bf  usr/share/doc/lzip/copyright
-b609a53210f5df5198238ca1689d994b  usr/share/info/lzip.not-parallel.info.gz
-9f18999b0587573ca9eb9ac3f1e6e9ed  usr/share/man/man1/lzip.not-parallel.1.gz
+b4cdbf84f7121396252314d0c71eb88f  usr/bin/lzip.not-parallel
+0a75c0910458ba46bd0957c90d5e0c0d  usr/share/doc/lzip/NEWS.gz
+ea61cdc74c96548e7f6766757178d811  usr/share/doc/lzip/README.gz
+cce666784a47600a80b2a2b275bd72c2  usr/share/doc/lzip/changelog.Debian.gz
+a9e36d76d58f8ceb21ec5773d2359937  usr/share/doc/lzip/changelog.gz
+19faf5eb5ed5f73d4e0ae2ac2342b372  usr/share/doc/lzip/copyright
+36aadd6879da3c687c4a3b6c6e8add4e  usr/share/info/lzip.not-parallel.info.gz
+57be8694f9db81f7c956d5749ea7ca47  usr/share/man/man1/lzip.not-parallel.1.gz

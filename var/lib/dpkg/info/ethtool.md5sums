@@ -1,8 +1,8 @@
-fe3020d3feb9fc45b0cdec3610df4a92  sbin/ethtool
-a5b4a11a826f1400f9faa3b19c0f07d2  usr/share/doc/ethtool/AUTHORS
-a85f38947168f60f3d0aed1e976a88b1  usr/share/doc/ethtool/NEWS.gz
+4f361cfb3ecb8e7964103a263eee27eb  sbin/ethtool
+8a8a2bd4d619a6eedbc3cbd23eb163da  usr/share/doc/ethtool/AUTHORS
+3713bedb3ed0ce648289849e574ae1c9  usr/share/doc/ethtool/NEWS.gz
 3c8a36b0eb263e2ee9e8e6d334cb09bc  usr/share/doc/ethtool/README
 fe94b59ce34036a63d890409a65cea64  usr/share/doc/ethtool/README.Debian
-731935c82125015af864bc181bd99891  usr/share/doc/ethtool/changelog.Debian.gz
+c72e0f75ea9b870f1403d9ca6ce39598  usr/share/doc/ethtool/changelog.Debian.gz
 6e3c583862726ca73f45f9f6dd9e23ce  usr/share/doc/ethtool/copyright
-8af1a40cc345eedcc5cfd111f9457623  usr/share/man/man8/ethtool.8.gz
+1f603fc996d70b417dfb2a24de66f8fe  usr/share/man/man8/ethtool.8.gz

@@ -1,11 +1,7 @@
 #! /bin/sh
 ### BEGIN INIT INFO
 # Provides:          mountall
-<<<<<<< HEAD
-# Required-Start:    
-=======
 # Required-Start:    checkfs checkroot-bootclean
->>>>>>> parent of 5bf0e33... aggressively remove sysv stuff just to see what happens
 # Required-Stop: 
 # Default-Start:     S
 # Default-Stop:
@@ -59,11 +55,7 @@ do_start() {
 		mknod -m 600 "$INITCTL" p
 
 		# Reopen control channel.
-<<<<<<< HEAD
-		PID="$(pidof /sbin/init || echo 1)"
-=======
-		PID="$(pidof /sbin/init || true)"
->>>>>>> parent of 5bf0e33... aggressively remove sysv stuff just to see what happens
+		PID="$(pidof -s /sbin/init || echo 1)"
 		[ -n "$PID" ] && kill -s USR1 "$PID"
 	fi
 

@@ -448,7 +448,7 @@ wpa_cli_do () {
 	esac
 	
 	case "$4" in
-		*-psk|*-passphrase|*-passwd*|*-wep-key*)
+		*-psk|*-passphrase|*-passwd*|*-password*|*-wep-key*)
 			WPACLISET_DESC="$4 *****"
 			;;
 		*)
@@ -833,7 +833,7 @@ wpa_log_env () {
 #####################################################################
 ## hysteresis checking
 # Networking tools such as dhcp clients used with ifupdown can
-# synthesize artificial ACTION events, particuarly just after a
+# synthesize artificial ACTION events, particularly just after a
 # DISCONNECTED/CONNECTED events are experienced in quick succession.
 # This can lead to infinite event loops, and in extreme cases has the
 # potential to cause system instability.
