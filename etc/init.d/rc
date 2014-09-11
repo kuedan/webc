@@ -90,6 +90,10 @@ startpar -v > /dev/null 2>&1 || CONCURRENCY="none"
 case "$CONCURRENCY" in
 	makefile|startpar|shell) # startpar and shell are obsolete
 		CONCURRENCY=makefile
+<<<<<<< HEAD
+=======
+		log_action_msg "Using makefile-style concurrent boot in runlevel $runlevel"
+>>>>>>> parent of 5bf0e33... aggressively remove sysv stuff just to see what happens
 		startup() {
 			eval "$(startpar -p 4 -t 20 -T 3 -M $1 -P $previous -R $runlevel)"
 

@@ -32,7 +32,11 @@ mount_filesystems () {
 	#
 	# Mount proc filesystem on /proc
 	#
+<<<<<<< HEAD
 	domount "$MNTMODE" proc "" /proc proc "-onodev,noexec,nosuid,hidepid=2"
+=======
+	domount "$MNTMODE" proc "" /proc proc "-onodev,noexec,nosuid"
+>>>>>>> parent of 5bf0e33... aggressively remove sysv stuff just to see what happens
 
 	#
 	# Mount sysfs on /sys
@@ -42,6 +46,7 @@ mount_filesystems () {
 	then
 		domount "$MNTMODE" sysfs "" /sys sysfs "-onodev,noexec,nosuid"
 	fi
+<<<<<<< HEAD
 
 	#
 	# Mount cgroup on /sys/fs/cgroup
@@ -60,6 +65,8 @@ mount_filesystems () {
 	then
 		domount "$MNTMODE" securityfs "" /sys/kernel/security securityfs "-onodev,noexec,nosuid"
 	fi
+=======
+>>>>>>> parent of 5bf0e33... aggressively remove sysv stuff just to see what happens
 }
 
 case "$1" in
